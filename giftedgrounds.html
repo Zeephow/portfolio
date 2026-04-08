@@ -27,8 +27,7 @@
     <p class="eyebrow">Project Feature</p>
     <h1>Gifted Grounds</h1>
     <p class="subtitle">
-      A "mobile mall" that pulls many independent stores into one interface, so
-      shoppers do not bounce between tabs to compare or buy.
+      A multi-vendor e-commerce and service marketplace built to help businesses create professional online storefronts, manage orders, accept payments, and reach customers through one centralized platform.
     </p>
   </section>
 
@@ -36,9 +35,10 @@
     <div class="project-card intro tilt">
       <h2>Overview</h2>
       <p>
-        Gifted Grounds is my take on a mobile-first mall: one storefront that hosts
-        multiple brands so people can browse, compare, and check out without hopping
-        across sites.
+        Gifted Grounds is a full-stack platform I built to give businesses a ready-made online presence without requiring them to build their own websites from scratch. The platform allows multiple sellers to create and manage shops, upload products and services, display branded content, communicate with customers, and manage orders through one system.
+      </p>
+      <p>
+        On the customer side, the platform was designed to make browsing, booking, shopping, and checkout simple and mobile-friendly. On the seller side, it was built to handle real business needs such as plan-based access, analytics, messaging, payment flows, delivery handling, and order tracking.
       </p>
     </div>
 
@@ -48,38 +48,165 @@
     </div>
 
     <div class="project-card tilt">
-      <h2>Goal</h2>
+      <h2>Problem It Solves</h2>
       <p>
-        Remove friction. Centralize discovery, carts, and checkout. Give every brand a
-        home while keeping the experience consistent and fast on mobile.
+        Many small businesses need to sell online, but creating a full custom website can be expensive, time-consuming, and difficult to maintain. Gifted Grounds solves that by providing a structured marketplace where businesses can sign up, set up their stores, upload products or services, and start selling through an already-built system.
+      </p>
+      <p>
+        Instead of forcing each seller to figure out hosting, design, payments, delivery logic, and customer communication separately, the platform centralizes those tools into one product.
       </p>
     </div>
 
     <div class="project-card tilt">
-      <h2>Key Highlights</h2>
+      <h2>Core Business Model</h2>
+      <p>
+        The platform was designed around a tiered seller plan system. Sellers can subscribe to different plans with different benefits, limits, and commission structures.
+      </p>
       <ul>
-        <li>Multi-store catalog with consistent UI</li>
-        <li>Unified cart and checkout flow</li>
-        <li>Delivery options surfaced early</li>
-        <li>Payment gateway handoff ready</li>
-        <li>Responsive, mobile-first layout</li>
+        <li>Free tier with product limits and restricted features</li>
+        <li>Paid plans with lower commission, more products, more edits, and expanded seller tools</li>
+        <li>Higher-tier plans with no platform commission and more tailored support</li>
+        <li>Plan logic connected to seller access and pricing behaviour across the platform</li>
+      </ul>
+      <p>
+        This required building business logic that changes what a seller can do depending on their active plan, including commission calculations, listing flexibility, and access to analytics and promotional tools.
+      </p>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Seller Features</h2>
+      <ul>
+        <li>Create and manage individual shop profiles</li>
+        <li>Add shop details such as name, address, contact information, branding, and logo</li>
+        <li>Upload and manage products and services</li>
+        <li>Upload media including product images, service visuals, and advertising content</li>
+        <li>Create a branded storefront experience within the platform</li>
+        <li>Access analytics such as shop views, sales-related insights, and customer activity</li>
+        <li>Manage customer orders and update statuses through the seller dashboard</li>
+        <li>Use messaging functionality to communicate with buyers</li>
+      </ul>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Customer Features</h2>
+      <ul>
+        <li>Browse multiple stores in one place</li>
+        <li>View products and services in a mobile-friendly layout</li>
+        <li>Add items to cart and move through a structured checkout flow</li>
+        <li>Book services as well as purchase physical products</li>
+        <li>Use saved delivery details and location-aware address options</li>
+        <li>Interact with sellers through platform messaging features</li>
+        <li>Track orders through status updates after checkout</li>
+      </ul>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Payments Integration</h2>
+      <p>
+        Gifted Grounds includes payment gateway integration through Ozow, allowing secure checkout handling for platform orders. I worked on the logic required to prepare transaction data, pass required fields, generate and validate secure hashes, and handle redirect and callback flows.
+      </p>
+      <ul>
+        <li>Ozow integration for secure payment handoff</li>
+        <li>Hash generation and validation flow for payment requests</li>
+        <li>Success, error, cancel, and notify handling</li>
+        <li>Transaction reference and payment verification logic</li>
+        <li>Order and transaction linking for platform records</li>
+      </ul>
+      <p>
+        This part of the system was important because it moved the platform beyond a concept into something with real e-commerce transaction capability.
+      </p>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Delivery, Location, and API Logic</h2>
+      <p>
+        Delivery and fulfillment were designed as active parts of the checkout and order workflow rather than afterthoughts. The platform includes location and delivery-related thinking using mapping, address handling, and courier integration planning.
+      </p>
+      <ul>
+        <li>Google Maps-related delivery and address logic for locating customers and branches</li>
+        <li>Distance and rate-oriented thinking for delivery decisions</li>
+        <li>Branch and location data to help determine relevant fulfilment paths</li>
+        <li>Courier Guy integration planning for shipment handling, rates, and tracking</li>
+        <li>Support for delivery-related order updates such as dispatched and out-for-delivery</li>
+      </ul>
+      <p>
+        The system was designed to support real delivery workflows, including using address and location data to improve how rates, routes, and fulfillment decisions are handled.
+      </p>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Order Management Logic</h2>
+      <p>
+        One of the strongest parts of the platform is the operational order flow. I worked on order states and seller-side actions so that the platform could support real order progression instead of just static order confirmation.
+      </p>
+      <ul>
+        <li>Structured order status updates for both product and service orders</li>
+        <li>Seller-side dashboard logic for updating order progress</li>
+        <li>Support for flows such as pending, confirmed, preparing, dispatched, completed, and cancelled</li>
+        <li>Prevention of invalid backwards status movement</li>
+        <li>Live-refresh style dashboard behaviour to keep the seller view current</li>
+      </ul>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Services and Booking Functionality</h2>
+      <p>
+        Gifted Grounds was not limited to standard product sales. It also supports services, which made the platform more flexible and more realistic for businesses that offer bookings or house-call work.
+      </p>
+      <ul>
+        <li>Service listings alongside product listings</li>
+        <li>Booking-style flows for service purchases</li>
+        <li>Support for deposits on services</li>
+        <li>Logic for address collection where a service requires a customer location</li>
+        <li>Flexible checkout handling depending on whether the order contains products, services, or both</li>
+      </ul>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Platform Logic and Calculations</h2>
+      <p>
+        The platform includes business logic beyond visual presentation. Pricing and order totals were influenced by real operational rules such as VAT, plan-based commission, deposits, and delivery amounts.
+      </p>
+      <ul>
+        <li>VAT calculation handling</li>
+        <li>Plan-based commission logic tied to seller subscriptions</li>
+        <li>Seller earnings and platform commission separation</li>
+        <li>Deposit calculations for eligible service orders</li>
+        <li>Delivery charges and total order value calculations</li>
+      </ul>
+      <p>
+        This reflects the kind of thinking needed to build a platform that works commercially, not just visually.
+      </p>
+    </div>
+
+    <div class="project-card tilt">
+      <h2>Admin, Seller, and Platform Thinking</h2>
+      <p>
+        Gifted Grounds required building for different types of users, not just buyers. That meant thinking through platform administration, seller tools, operational dashboards, and long-term monetization.
+      </p>
+      <ul>
+        <li>Different user flows for buyers and sellers</li>
+        <li>Seller dashboards for managing orders and storefronts</li>
+        <li>Analytics-oriented thinking for business performance visibility</li>
+        <li>Wallet and payout-related platform thinking for seller settlements</li>
+        <li>Expandable structure for future admin oversight and payment handling</li>
       </ul>
     </div>
 
     <div class="project-card tilt">
       <h2>Tech Stack</h2>
-      <p>HTML, CSS, JavaScript, PHP, MySQL</p>
+      <p>HTML, CSS, JavaScript, PHP, MySQL, Bootstrap, Ozow integration, Google Maps-related location logic, Courier Guy delivery integration planning</p>
     </div>
 
     <div class="project-card tilt">
-      <h2>What It Shows</h2>
+      <h2>What This Project Demonstrates</h2>
       <p>
-        Product sense and empathy for shoppers: fewer clicks, clearer delivery info,
-        and a checkout designed for real people on real phones. It also reflects how
-        I like to work - practical, user-first, and shipping things that reduce hassle.
+        Gifted Grounds shows that I can build more than attractive interfaces. It demonstrates my ability to think through product architecture, platform roles, business logic, payments, delivery operations, seller tools, and customer experience in one connected system.
+      </p>
+      <p>
+        It reflects full-stack development ability, product thinking, and practical problem-solving. More importantly, it shows that I can build systems intended for real businesses and real users, not just mock projects.
       </p>
     </div>
-
   </section>
 
   <script src="script.js"></script>
